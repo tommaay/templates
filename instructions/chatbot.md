@@ -1,10 +1,10 @@
 # Project overview
 
-Mobile chat assistant - I want to build a mobile app that can be chat assistant that can respond with text or voice. It should also be able to handle language translations.
+Develop a sophisticated mobile friendly application using Next.js that functions as an engaging chat companion, capable of text and voice interactions, and real-time language translation.
 
 # Tech stack
 
-TurboRepo, Nextjs, React Native Expo app, Clerk Authentication, Neon Postgres, Tamagui for mobile and web development, Resend for emails, Sentry for code monitoring, Chroma for vector database, Stripe for payments, Vercel for hosting.
+Nextjs, Clerk Authentication, Neon Postgres, Shadcn UI, Resend for emails, Sentry for code monitoring, Chroma for vector database, Stripe for payments, Vercel for hosting and Drizzle ORM.
 
 # Pages / Screens
 
@@ -115,17 +115,14 @@ TurboRepo, Nextjs, React Native Expo app, Clerk Authentication, Neon Postgres, T
 
 If you need further assistance, refer to the official documentation:
 
-- [Clerk Documentation](https://clerk.com/docs)
-- [Tamgui](https://tamagui.dev/docs/)
-- [Turborepo](https://turbo.build/repo/docs)
 - [Nextjs](https://nextjs.org/docs)
-- [Expo](https://docs.expo.dev/)
-- [React Native](https://reactnative.dev/docs/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Tailwind](https://tailwindcss.com/docs)
+- [Clerk Documentation](https://clerk.com/docs)
 - [Neon](https://neon.tech/docs)
 - [Chroma](https://docs.trychroma.com/)
 - [Stripe](https://docs.stripe.com/)
 - [Resend](https://resend.com/docs/)
 - [Sentry](https://docs.sentry.io/)
 - [Vercel](https://vercel.com/docs)
-
-# Rules
+- [Drizzle ORM](https://orm.drizzle.team/docs/overview)
