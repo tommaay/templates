@@ -1,29 +1,41 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript",
-    "@eslint/js/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:next/recommended"
+    "plugin:react-hooks/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "next"],
-  "env": {
-    "browser": true
-  },
-  "files": ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "import/order": [
       "error",
       {
         "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
         "alphabetize": { "order": "asc", "caseInsensitive": true },
         "newlines-between": "always"
       }
     ],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "curly": ["error", "all"],
-    "no-console": ["warn"],
     "prefer-const": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
