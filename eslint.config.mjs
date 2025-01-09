@@ -1,6 +1,6 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,31 +10,37 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
-    plugins: ['import'],
+    ignores: [".next/*", "node_modules/*", "dist/*"],
+  },
+  ...compat.extends("next/core-web-vitals"),
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    plugins: {
+      import: (await import("eslint-plugin-import")).default,
+    },
     rules: {
-      'import/order': [
-        'error',
+      "import/order": [
+        "error",
         {
-          groups: ['builtin', 'external', 'internal'],
+          groups: ["builtin", "external", "internal"],
           pathGroups: [
             {
-              pattern: 'react',
-              group: 'builtin',
-              position: 'before',
+              pattern: "react",
+              group: "builtin",
+              position: "before",
             },
             {
-              pattern: '@/**',
-              group: 'internal',
+              pattern: "@/**",
+              group: "internal",
             },
           ],
-          alphabetize: { order: 'asc', caseInsensitive: true },
-          'newlines-between': 'always',
+          alphabetize: { order: "asc", caseInsensitive: true },
+          "newlines-between": "always",
         },
       ],
-      curly: ['warn', 'all'],
-      'prefer-const': 'warn',
+      curly: ["warn", "all"],
+      "prefer-const": "warn",
     },
   },
 ];
